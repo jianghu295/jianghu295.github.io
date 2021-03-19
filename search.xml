@@ -16,6 +16,154 @@
       </tags>
   </entry>
   <entry>
+    <title>类集框架</title>
+    <url>/2021/03/17/23-33-08/</url>
+    <content><![CDATA[<h3 id="1-类集框架"><a href="#1-类集框架" class="headerlink" title="1. 类集框架"></a>1. 类集框架</h3><ul>
+<li>Java的集合框架使你的程序处理对象组的方法标准化</li>
+<li>集合框架被设计的目的：<ul>
+<li>这种框架是高性能的。对基本集合类（动态数组，链接表，树和散列表）的实现是高效率的</li>
+<li>框架必须允许不同类型的集合以相同的方式和高度互操作方式操作</li>
+<li><strong>集合是容易扩展和或修改的</strong></li>
+</ul>
+</li>
+<li>Java平台提供了一个全新的集合框架。“集合框架”主要由一组用来操作对象的接口组成,位于<em>java.util</em>包下。不同接口描述一组不同数据类型</li>
+<li>Collection接口——定义了存取一组对象的方法，将对象以一个接一个的方式存储，其子接口Set和List分别定义了具体的存储方式<ul>
+<li>Set中的数据对象<strong>没有顺序且不可以重复</strong></li>
+<li>List中的数据对象<strong>有顺序且可以重复</strong><h4 id="1-1-Collecion接口中的方法"><a href="#1-1-Collecion接口中的方法" class="headerlink" title="1.1 Collecion接口中的方法"></a>1.1 Collecion接口中的方法</h4></li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">add()</td>
+<td align="center">向集合中添加一个元素</td>
+</tr>
+<tr>
+<td align="center">addAll()</td>
+<td align="center">向集合中添加另一个集合</td>
+</tr>
+<tr>
+<td align="center">remove()</td>
+<td align="center">从集合中删除一个元素</td>
+</tr>
+<tr>
+<td align="center">size()</td>
+<td align="center">返回元素数</td>
+</tr>
+<tr>
+<td align="center">isEmpty()</td>
+<td align="center">判断集合中是否为空</td>
+</tr>
+<tr>
+<td align="center">toArray()</td>
+<td align="center">集合变成数组</td>
+</tr>
+<tr>
+<td align="center">contains()</td>
+<td align="center">判断是否有这个对象</td>
+</tr>
+<tr>
+<td align="center">containsAll()</td>
+<td align="center">判断是否有这个集合</td>
+</tr>
+<tr>
+<td align="center">clear()</td>
+<td align="center">清空集合中的所有元素</td>
+</tr>
+<tr>
+<td align="center">iterator()</td>
+<td align="center">迭代器<br>每个Collection的实现类都提供了一个iterator()方法，可以返回一个Iterator类</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		List&lt;String&gt; list2 = <span class="keyword">new</span> ArrayList&lt;String&gt;();<span class="comment">// 没有泛型，可以添加任意类型数据</span></span><br><span class="line">		list2.add(<span class="string">&quot;def&quot;</span>); <span class="comment">// 向集合中添加一个元素</span></span><br><span class="line">		List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">		list.addAll(list2); <span class="comment">// 向集合中添加另一个集合</span></span><br><span class="line">		System.out.println(list.add(<span class="string">&quot;222&quot;</span>));</span><br><span class="line">		list.add(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line">		list.add(<span class="string">&quot;xxx&quot;</span>);</span><br><span class="line">		System.out.println(list);</span><br><span class="line">		list.remove(<span class="string">&quot;222&quot;</span>); <span class="comment">// 从集合中删除一个元素</span></span><br><span class="line">		System.out.println(list);</span><br><span class="line">		System.out.println(list.size());</span><br><span class="line">		<span class="comment">// list.clear();// 清空集合中的所有元素</span></span><br><span class="line">		System.out.println(list.isEmpty());<span class="comment">// 判断集合中是否为空</span></span><br><span class="line"></span><br><span class="line">		String[] str = <span class="keyword">new</span> String[<span class="number">0</span>];<span class="comment">// 模板</span></span><br><span class="line">		String[] str2 = list.toArray(str); <span class="comment">// 集合变成数组</span></span><br><span class="line">		System.out.println(Arrays.toString(str2));</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		System.out.println(list.contains(<span class="string">&quot;xxx&quot;</span>)); <span class="comment">// 判断是否有这个对象</span></span><br><span class="line">		System.out.println(list.containsAll(list2)); <span class="comment">//判断是否有这个集合</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="1-1-1-List接口"><a href="#1-1-1-List接口" class="headerlink" title="1.1.1 List接口"></a>1.1.1 List接口</h5><ul>
+<li>List接口是Collection的子接口，实现List接口的容器类中是有顺序的，且可以重复的</li>
+<li>类似数组，但可以动态增长，查找元素效率高，插入删除元素效率低，因为会引起其他元素位置的改变。</li>
+<li>List接口的容器类有<em>ArrayList</em>和<em>LinkedList</em></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">set(index, element)</td>
+<td align="center">obj对调用列表内由index指定的位置进行赋值</td>
+</tr>
+<tr>
+<td align="center">get(index)</td>
+<td align="center">调用类集内指定下标处的对象</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		List&lt;String&gt; list2 = <span class="keyword">new</span> ArrayList&lt;String&gt;();<span class="comment">//泛型</span></span><br><span class="line">		list2.add(<span class="string">&quot;def&quot;</span>);<span class="comment">// 向集合总添加另一个元素</span></span><br><span class="line">		List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">		list.addAll(list2);<span class="comment">// 向集合中添加另一个集合</span></span><br><span class="line">		System.out.println(list.add(<span class="string">&quot;444&quot;</span>));</span><br><span class="line">		list.add(<span class="number">1</span>,<span class="string">&quot;abc&quot;</span>);<span class="comment">//在下标位置插入</span></span><br><span class="line">		list.set(<span class="number">1</span>, <span class="string">&quot;xxx&quot;</span>); <span class="comment">// obj对调用列表内由index指定的位置进行赋值</span></span><br><span class="line">		System.out.println(list.get(<span class="number">0</span>));<span class="comment">//存储在调用类集内指定下标处的对象</span></span><br><span class="line">		System.out.println(list.indexOf(<span class="string">&quot;abc&quot;</span>));<span class="comment">//调用列表中obj的第一个实例的下标。如果obj不是列表中的元素，则返回-1</span></span><br><span class="line">		list.remove(<span class="number">0</span>);<span class="comment">//删除调用列表中index位置的元素并返回删除的元素</span></span><br><span class="line">		System.out.println(list);</span><br><span class="line">		System.out.println(list.size());</span><br><span class="line"><span class="comment">//		list.clear();//清空集合内的所有元素</span></span><br><span class="line">		</span><br><span class="line">		String[] str = <span class="keyword">new</span> String[<span class="number">0</span>];<span class="comment">// 模板</span></span><br><span class="line">		String[] str2 = list.toArray(str); <span class="comment">// 集合变成数组</span></span><br><span class="line">		System.out.println(Arrays.toString(str2));</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Person p1 = <span class="keyword">new</span> Person(<span class="string">&quot;tom&quot;</span>, <span class="number">21</span>);</span><br><span class="line">		Person p2 = <span class="keyword">new</span> Person(<span class="string">&quot;jack&quot;</span>, <span class="number">27</span>);</span><br><span class="line">		Person p3 = <span class="keyword">new</span> Person(<span class="string">&quot;mary&quot;</span>, <span class="number">23</span>);</span><br><span class="line">		</span><br><span class="line">		List&lt;Person&gt; list = <span class="keyword">new</span> ArrayList&lt;Person&gt;();</span><br><span class="line">		list.add(p1);</span><br><span class="line">		list.add(p2);</span><br><span class="line">		list.set(<span class="number">1</span>, p3);</span><br><span class="line">		System.out.println(list);</span><br><span class="line"><span class="comment">//		list.remove(0);</span></span><br><span class="line"><span class="comment">//		list.remove(p3);</span></span><br><span class="line">		System.out.println(list);</span><br><span class="line">		Person p = list.get(<span class="number">0</span>);</span><br><span class="line">		System.out.println(p);</span><br><span class="line">		<span class="keyword">for</span> (Person s : list) &#123;</span><br><span class="line">			System.out.println(s);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++) &#123;</span><br><span class="line">			System.out.println(list.get(i));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;Person [name=&quot;</span> + name + <span class="string">&quot;, age=&quot;</span> + age + <span class="string">&quot;]&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="1-1-2-Set"><a href="#1-1-2-Set" class="headerlink" title="1.1.2 Set"></a>1.1.2 Set</h5><h5 id="1-1-3-Iterator类"><a href="#1-1-3-Iterator类" class="headerlink" title="1.1.3 Iterator类"></a>1.1.3 Iterator类</h5><blockquote>
+<p>循环遍历集合中的对象可以使用迭代器Iterator接口</p>
+<p>每个Collection的实现类都提供了一个iterator()方法，可以返回一个Iterator类</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">hasNext()</td>
+<td align="center">判断是否还有元素继续迭代</td>
+</tr>
+<tr>
+<td align="center">it.next()</td>
+<td align="center">返回迭代的下一个元素</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Person p1 = <span class="keyword">new</span> Person(<span class="string">&quot;tom&quot;</span>, <span class="number">21</span>);</span><br><span class="line">		Person p2 = <span class="keyword">new</span> Person(<span class="string">&quot;jack&quot;</span>, <span class="number">27</span>);</span><br><span class="line">		Person p3 = <span class="keyword">new</span> Person(<span class="string">&quot;mary&quot;</span>, <span class="number">23</span>);</span><br><span class="line">		</span><br><span class="line">		List&lt;Person&gt; list = <span class="keyword">new</span> ArrayList&lt;Person&gt;();</span><br><span class="line">		list.add(p1);</span><br><span class="line">		list.add(p2);</span><br><span class="line">		list.add(p3);</span><br><span class="line">		</span><br><span class="line">		Iterator&lt;Person&gt; it = list.iterator();<span class="comment">//迭代器</span></span><br><span class="line">		<span class="keyword">while</span> (it.hasNext()) &#123;<span class="comment">// 判断是否还有元素继续迭代</span></span><br><span class="line">			Person p = it.next();<span class="comment">// 返回迭代的下一个元素</span></span><br><span class="line">			System.out.println(p);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;Person [name=&quot;</span> + name + <span class="string">&quot;, age=&quot;</span> + age + <span class="string">&quot;]&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-Collections类"><a href="#1-2-Collections类" class="headerlink" title="1.2 Collections类"></a>1.2 Collections类</h4><blockquote>
+<p><strong>Collections类中是静态方法</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">sort()</td>
+<td align="center">排序，实现Comparable接口，重写compareTo方法</td>
+</tr>
+<tr>
+<td align="center">shuffle()</td>
+<td align="center">随机打乱顺序</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">		list.add(<span class="string">&quot;444&quot;</span>);</span><br><span class="line">		list.add(<span class="number">1</span>, <span class="string">&quot;abc&quot;</span>);</span><br><span class="line">		list.add(<span class="number">1</span>, <span class="string">&quot;xxx&quot;</span>); </span><br><span class="line">		System.out.println(list);</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		 * Collection 接口 定义集合中所有通用的方法</span></span><br><span class="line"><span class="comment">		 * Collections 类(工具类) 类似于Arrays,静态方法</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		Collections.sort(list);<span class="comment">// 集合排序的方法，集合的类必须实现Comparable接口，重写compareTo方法，否则编译错误</span></span><br><span class="line">		System.out.println(list);</span><br><span class="line">		Collections.shuffle(list);<span class="comment">// 随机打乱顺序</span></span><br><span class="line">		System.out.println(list);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java常用类</title>
     <url>/2021/03/17/23-32-08/</url>
     <content><![CDATA[<h3 id="1-String类"><a href="#1-String类" class="headerlink" title="1. String类"></a>1. String类</h3><h4 id="1-1-String类的构造方法"><a href="#1-1-String类的构造方法" class="headerlink" title="1.1 String类的构造方法"></a>1.1 String类的构造方法</h4><blockquote>
