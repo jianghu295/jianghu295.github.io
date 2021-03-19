@@ -5,6 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
+
+
+
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("http://xxxxxxx.xxx"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -23,26 +40,26 @@
   <meta name="description" content="Java基础第一章 计算机 程序和Java概述1 面向对象程序设计的三大支柱  封装 继承 多态">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java基础">
-<meta property="og:url" content="https://jianghu295.github.io/project/2021/03/17/23-30-08/index.html">
+<meta property="og:url" content="https://jianghu295.github.io/2021/03/17/23-30-08/index.html">
 <meta property="og:site_name" content="JiangHu295">
 <meta property="og:description" content="Java基础第一章 计算机 程序和Java概述1 面向对象程序设计的三大支柱  封装 继承 多态">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://jianghu295.github.io/project/2021/03/17/23-30-08/image-20210223224359078.png">
-<meta property="og:image" content="https://jianghu295.github.io/project/2021/03/17/23-30-08/image-20210302091249418.png">
-<meta property="og:image" content="https://jianghu295.github.io/project/2021/03/17/23-30-08/image-20210302091837891.png">
-<meta property="og:image" content="https://jianghu295.github.io/project/2021/03/17/23-30-08/20180920165502957.jpg">
-<meta property="og:image" content="https://jianghu295.github.io/project/2021/03/17/23-30-08/image-20210314210606373.png">
-<meta property="og:image" content="https://jianghu295.github.io/project/2021/03/17/23-30-08/image-20210314212352182.png">
-<meta property="og:image" content="https://jianghu295.github.io/project/2021/03/17/23-30-08/image-20210314213057241.png">
-<meta property="og:image" content="https://jianghu295.github.io/project/2021/03/17/23-30-08/image-20210302091506845.png">
+<meta property="og:image" content="https://jianghu295.github.io/2021/03/17/23-30-08/image-20210223224359078.png">
+<meta property="og:image" content="https://jianghu295.github.io/2021/03/17/23-30-08/image-20210302091249418.png">
+<meta property="og:image" content="https://jianghu295.github.io/2021/03/17/23-30-08/image-20210302091837891.png">
+<meta property="og:image" content="https://jianghu295.github.io/2021/03/17/23-30-08/20180920165502957.jpg">
+<meta property="og:image" content="https://jianghu295.github.io/2021/03/17/23-30-08/image-20210314210606373.png">
+<meta property="og:image" content="https://jianghu295.github.io/2021/03/17/23-30-08/image-20210314212352182.png">
+<meta property="og:image" content="https://jianghu295.github.io/2021/03/17/23-30-08/image-20210314213057241.png">
+<meta property="og:image" content="https://jianghu295.github.io/2021/03/17/23-30-08/image-20210302091506845.png">
 <meta property="article:published_time" content="2021-03-17T15:30:08.000Z">
 <meta property="article:modified_time" content="2021-03-18T14:37:24.767Z">
 <meta property="article:author" content="JiangHu295">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jianghu295.github.io/project/2021/03/17/23-30-08/image-20210223224359078.png">
+<meta name="twitter:image" content="https://jianghu295.github.io/2021/03/17/23-30-08/image-20210223224359078.png">
 
-<link rel="canonical" href="https://jianghu295.github.io/project/2021/03/17/23-30-08/">
+<link rel="canonical" href="https://jianghu295.github.io/2021/03/17/23-30-08/">
 
 
 <script id="page-configurations">
@@ -59,6 +76,15 @@
   
 
 
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4929e63b247386abe74c1779631eb22a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -207,7 +233,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jianghu295.github.io/project/2021/03/17/23-30-08/">
+    <link itemprop="mainEntityOfPage" href="https://jianghu295.github.io/2021/03/17/23-30-08/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -917,7 +943,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://jianghu295.github.io/project/2021/03/17/23-30-08/" title="Java基础">https://jianghu295.github.io/project/2021/03/17/23-30-08/</a>
+    <a href="https://jianghu295.github.io/2021/03/17/23-30-08/" title="Java基础">https://jianghu295.github.io/2021/03/17/23-30-08/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -1023,7 +1049,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
