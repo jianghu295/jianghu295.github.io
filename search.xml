@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>二分查找</title>
+    <url>/2021/03/27/22-03-57/</url>
+    <content><![CDATA[<blockquote>
+<p>优点</p>
+</blockquote>
+<ul>
+<li>比较次数少</li>
+<li>查找速度快</li>
+<li>平均性能好</li>
+</ul>
+<blockquote>
+<p>缺点</p>
+</blockquote>
+<ul>
+<li>要求待查表为有序表，且插入删除困难</li>
+</ul>
+<blockquote>
+<p>结论</p>
+</blockquote>
+<ul>
+<li>适用于不经常变动而查找频繁的有序列表</li>
+</ul>
+<blockquote>
+<p>使用条件</p>
+</blockquote>
+<ul>
+<li>查找序列是顺序结构，有序</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span> &#125;;</span><br><span class="line">		System.out.println(binary_search(arr, <span class="number">8</span>));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binary_search</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> a)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> low = <span class="number">0</span>, mid;</span><br><span class="line">		<span class="keyword">int</span> high = arr.length;</span><br><span class="line">		<span class="keyword">while</span> (low &lt;= high) &#123;</span><br><span class="line">			mid = (low + high) / <span class="number">2</span>;</span><br><span class="line">			<span class="keyword">if</span> (arr[mid] == a) &#123;</span><br><span class="line">				<span class="keyword">return</span> mid;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (arr[mid] &lt; a) &#123;</span><br><span class="line">				low = mid + <span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				high = mid - <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>《算法图解》</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大O表示法</title>
+    <url>/2021/03/27/21-22-47/</url>
+    <content><![CDATA[<blockquote>
+<p>指出最糟情况下的运行时间</p>
+<p>从快到慢<br>O(log n)<br>O(n)<br>O(n * log n)<br>O(n^2)<br>O(n!)</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>大O表示法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>设计模式</title>
     <url>/2021/03/26/08-46-31/</url>
     <content><![CDATA[<h2 id="设计模式的六大原则"><a href="#设计模式的六大原则" class="headerlink" title="设计模式的六大原则"></a>设计模式的六大原则</h2><p>对修改关闭，对扩展开放</p>
