@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Oracle和MySQL区别</title>
+    <url>/2021/04/11/22-39-12/</url>
+    <content><![CDATA[<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--   oracle 自动增长是序列，mysql是自动增长</span></span><br><span class="line"><span class="comment">--  日期格式oracle是to_date（）dd-月-yyyy sysdate ，mysql支持字符串</span></span><br><span class="line"><span class="comment">--  oracle 分页是子查询，mysql是limit</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- exp scott/tiger@127.0.0.1:1521/xe file=c:/f.dmp full=y</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--exp  export 的缩写 用户名/密码@ip地址：端口号：xe 数据库实例的名字   file=c:/   dmp full=y</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--imp scott/tiger@xe file=c:/f.dmp  full=y ignore=y</span></span><br></pre></td></tr></table></figure>
+
+<p>limit 分页公式<br><code>limit  (curPage-1)*pageSize,pageSize</code><br><code>select * from student limit(curPage-1)*pageSize,pageSize;</code></p>
+<p>limit 3,3的意思扫描满足条件的3+3行，撇去前面的3行，返回最后的3行<br><code>select * from dept order by deptno desc limit 3,3;</code></p>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Oracle数据库（续3）</title>
     <url>/2021/04/08/10-43-00/</url>
     <content><![CDATA[<h2 id="集合操作"><a href="#集合操作" class="headerlink" title="集合操作"></a>集合操作</h2><p>在SQL语句中集合操作有：交、差、并，可以使用以下的几个操作完成：</p>
