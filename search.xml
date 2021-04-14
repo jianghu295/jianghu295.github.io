@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Git学习笔记</title>
+    <url>/2021/04/14/22-32-41/</url>
+    <content><![CDATA[<p>更改了 github 的用户名后，更改 gitpages 的项目名后，还需要更改仓库的 <code>user.name</code> ，</p>
+<h2 id="Git-创建仓库"><a href="#Git-创建仓库" class="headerlink" title="Git 创建仓库"></a>Git 创建仓库</h2><h3 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h3><p>Git 使用 <code>git init</code> 命令来初始化一个Git仓库</p>
+<p>指定目录作为Git仓库<br><code>git init newrepo</code></p>
+<h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h3><p>使用 git clone 从现有 Git 仓库中拷贝项目<br><code>git clone &lt;repo&gt;</code></p>
+<p>克隆到指定的目录<br><code>git clone &lt;repo&gt; &lt;directory&gt;</code></p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>Git 的设置使用 <code>git config</code> 命令，显示当前 git 配置信息</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git config --global --list</span><br><span class="line">core.editor&#x3D;&quot;C:\Users\295\AppData\Local\Programs\Microsoft VS Code\Code.exe&quot; --wait</span><br><span class="line">user.name&#x3D;xxxxx</span><br><span class="line">user.email&#x3D;xxxxxxxx@xx.com</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git config --list</span><br><span class="line">credential.helper&#x3D;osxkeychain</span><br><span class="line">core.repositoryformatversion&#x3D;0</span><br><span class="line">core.filemode&#x3D;true</span><br><span class="line">core.bare&#x3D;false</span><br><span class="line">core.logallrefupdates&#x3D;true</span><br><span class="line">core.ignorecase&#x3D;true</span><br><span class="line">core.precomposeunicode&#x3D;true</span><br></pre></td></tr></table></figure>
+
+<p>编辑 git 配置文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git config -e    # 针对当前仓库 </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git config -e --global   # 针对系统上所有仓库</span><br></pre></td></tr></table></figure>
+
+<p>设置提交代码时的用户信息</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name &quot;runoob&quot;</span><br><span class="line">$ git config --global user.email test@runoob.com</span><br></pre></td></tr></table></figure>
+
+<p>如果去掉 <code>--global</code> 参数只对当前仓库有效</p>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>配置</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java刷题(1)</title>
     <url>/2021/04/13/22-07-01/</url>
     <content><![CDATA[<h2 id="210414"><a href="#210414" class="headerlink" title="210414"></a>210414</h2><p><code>sleep()</code>方法（休眠）是线程类（Thread）的静态方法，调用此方***让当前线程暂停执行指定的时间，将执行机会（CPU）让给其他线程，但是对象的锁依然保持，因此休眠时间结束后会自动恢复（线程回到就绪状态，请参考第66题中的线程状态转换图）。<code>wait()</code>是Object类的方法，调用对象的wait()方法导致当前线程放弃对象的锁（线程暂停执行），进入对象的等待池（wait pool），只有调用对象的<code>notify()</code>方法（或<code>notifyAll()</code>方法）时才能唤醒等待池中的线程进入等锁池（lock pool），如果线程重新获得对象的锁就可以进入就绪状态。</p>
